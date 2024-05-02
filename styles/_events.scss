@@ -176,7 +176,7 @@
     }
   }
   .events__events-select-container {
-    max-width: 100vw;
+    width: calc(100vw - 30px);
     overflow: scroll;
     padding: 1px 0 10px 1px;
   }

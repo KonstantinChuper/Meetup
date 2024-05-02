@@ -387,7 +387,7 @@ header {
   top: 5px;
 }
 
-.activity-kind {
+.events-near__activity-kind {
   padding-top: 20px;
   color: #707070;
   font-size: 14px;
@@ -507,7 +507,7 @@ header {
   .events-near__events-list-image {
     height: 95px;
   }
-  .activity-kind {
+  .events-near__activity-kind {
     padding-top: 12px;
   }
   .events-near--online-section {
@@ -565,14 +565,15 @@ header {
     line-height: 1.1;
   }
   .events-near__events-list-image {
-    width: 170px;
-    height: 100px;
+    width: 110px;
+    height: 65px;
   }
   .events-near-online-event-img {
     position: static;
     order: 3;
+    width: 75px;
   }
-  .activity-kind {
+  .events-near__activity-kind {
     padding-top: 0;
     padding-left: 3px;
     order: 2;
@@ -1472,7 +1473,7 @@ footer {
     font-size: 25px;
   }
   .events__events-select-container {
-    max-width: 100vw;
+    width: calc(100vw - 30px);
     overflow: scroll;
     padding: 1px 0 10px 1px;
   }
