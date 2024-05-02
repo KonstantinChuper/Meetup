@@ -1,0 +1,220 @@
+.events {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  padding-top: 80px;
+}
+.events__events-search-container {
+  h2 {
+    @include section-header();
+  }
+}
+.events__events-search {
+  padding-top: 16px;
+  color: $primary-color;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.events__custom-select {
+  position: relative;
+  select {
+    appearance: none;
+    width: fit-content;
+    font-size: 14px;
+    padding: 16px 46px 16px 16px;
+    background-color: #f6f7f8;
+    border: none;
+    border-radius: 40px;
+    color: #212121;
+    cursor: pointer;
+    outline: none;
+    &:focus {
+      background: #f2f2f2;
+      box-shadow: 1px 1px 0px -1px rgba(102, 102, 102, 1), 0px 0px 0px 1px rgba(102, 102, 102, 1);
+    }
+  }
+}
+.events__select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 36%;
+  right: 16px;
+  //   transform: translate(0, -50%);
+  width: 14px;
+  height: 14px;
+}
+.events__events-select-container {
+  display: flex;
+  gap: 18px;
+}
+.events__all-events {
+  max-width: 605px;
+  margin-top: 56px;
+}
+.events__all-events-link {
+  border-top: 1px solid #d9d9d9;
+  text-decoration: none;
+  padding-top: 16px;
+  padding-bottom: 26px;
+  display: flex;
+  gap: 16px;
+  &:hover .events__all-events-header {
+    text-decoration: underline;
+  }
+}
+.events__all-events-image-container {
+  width: 160px;
+  height: 90px;
+  border-radius: 8px;
+  position: relative;
+}
+.events__all-events-image {
+  border-radius: 8px;
+  width: 160px;
+}
+.events__all-events-description {
+  position: relative;
+}
+.events__all-events-online-event-image {
+  position: absolute;
+  left: -170px;
+  top: 5px;
+  width: clamp(25px, 50%, 106px);
+}
+.events__all-events-date {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #7c6f50;
+}
+.events__all-events-header {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $primary-font-color;
+}
+.events__all-events-category {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: $secondary-font-color;
+}
+.events__all-events-atendees {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: $secondary-font-color;
+  padding-top: 28px;
+}
+.events__map {
+  p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+}
+.events__map {
+  max-width: 350px;
+}
+.events__map-image-container {
+  padding-top: 14px;
+  width: clamp(250px, 100%, 350px);
+  position: relative;
+}
+.events__map-image {
+  width: 100%;
+  height: 285px;
+}
+.events__map-button {
+  @include buttons(172px, 40px, #ffffff);
+  @include flex-center;
+  gap: 10px;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.events__map-close-button {
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  width: 15px;
+  height: 15px;
+  @include flex-center;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .events__map {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .events {
+  padding-top: 22px;
+}
+  .events__events-search-container {
+    h2 {
+      font-size: 25px;
+    }
+  }
+  .events__events-select-container {
+    max-width: 100vw;
+    overflow: scroll;
+    padding: 1px 0 10px 1px;
+  }
+  // .events__custom-select {
+  //   padding-top: 10px;
+  // }
+  .events__all-events {
+    margin-top: 18px;
+  }
+  .events__all-events-image-container {
+    width: 98px;
+    height: 55px;
+    .events__all-events-image {
+      width: 98px;
+    }
+  }
+  .events__all-events-link {
+    max-width: 495px;
+    gap: 8px;
+  }
+  .events__all-events-date {
+    font-size: 10px;
+    padding-left: 4px;
+  }
+  .events__all-events-header {
+    font-size: 12px;
+    padding-left: 4px;
+  }
+  .events__all-events-category {
+    font-size: 10px;
+    padding-left: 4px;
+  }
+  .events__all-events-atendees {
+    font-size: 10px;
+    padding-left: 4px;
+  }
+  .events__all-events-online-event-image {
+    position: static;
+    width: 80px;
+  }
+}

@@ -1,0 +1,120 @@
+footer {
+  margin-top: 54px;
+  color: #c5c4c4;
+  background-color: $primary-font-color;
+}
+.footer__create-group-container {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid #707070;
+  p {
+    color: #f6f7f8;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  button {
+    @include buttons(119px, 44px, transparent);
+    border: 2px solid #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    &:hover {
+      background-color: #ffffff;
+      color: $primary-font-color;
+    }
+  }
+}
+.footer__nav-container {
+  padding-top: 24px;
+  display: flex;
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 33.3%;
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #f6f7f8;
+    }
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.42;
+      color: #c5c4c4;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.footer__social {
+  padding-top: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__social-container {
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+.footer__social-list {
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.footer__mobile-download {
+  a {
+    padding-left: 12px;
+  }
+}
+.footer__policy-container {
+  padding-top: 55px;
+  padding-bottom: 40px;
+  display: flex;
+  gap: 24px;
+}
+.footer__policy {
+  display: flex;
+  gap: 24px;
+  p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42;
+  }
+  a {
+    text-decoration: none;
+    color: #c5c4c4;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.footer-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .footer__mobile-download {
+    display: none;
+  }
+  .footer__policy {
+    display: none;
+  }
+  .footer__policy-container {
+    padding-bottom: 38px;
+  }
+}

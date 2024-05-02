@@ -1,0 +1,122 @@
+$primary-font-color: #212121;
+$secondary-font-color: #707070;
+$primary-color: #00798a;
+
+@mixin section-header() {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  @media (max-width: 992px) {
+    font-size: 24px;
+  }
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
+}
+@mixin buttons($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  &:hover {
+    background-color: rgba($color, 0.9);
+  }
+}
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin ticket-container() {
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  @media (max-width: 992px) {
+    padding-top: 8px;
+  }
+  @media (max-width: 576px) {
+    padding-top: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: $primary-font-color;
+}
+ul {
+  list-style: none;
+}
+.container {
+  width: 1181px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+@media (max-width: 540px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 540px) {
+  .container {
+    max-width: 520px;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1196px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+@import "./header";
+@import "./hero";
+@import "./events-near";
+@import "./join-meetup";
+@import "./explore-top-categories";
+@import "./popular-cities";
+@import "./how-meetup-works";
+@import "./friendship-on-meetup";
+@import "./footer";
+@import "./events";
+// .container {
+//   width: 100%;
+//   padding: 0 15px;
+//   margin: 0 auto;
+// }
+// .container {
+//   --bs-gutter-x: 6rem;
+//   --bs-gutter-y: 0;
+//   width: 100%;
+//   padding-right: calc(var(--bs-gutter-x) * 0.8);
+//   padding-left: calc(var(--bs-gutter-x) * 0.8);
+//   margin-right: auto;
+//   margin-left: auto;
+// }

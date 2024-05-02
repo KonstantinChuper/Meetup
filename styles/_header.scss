@@ -1,0 +1,133 @@
+header {
+  padding: 20px 45px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header__inputs-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  .header__input {
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .header__input[type="search"] {
+    border-radius: 8px 0 0 8px;
+    width: clamp(150px, 80%, 350px);
+    height: 42px;
+    border: 1px solid #d9d9d9;
+    padding: 13px 24px 13px 37px;
+    border-right: none;
+    &:focus {
+      outline: none;
+      border: 1px solid $primary-font-color;
+    }
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+  .header__input[type="text"] {
+    width: 254px;
+    height: 42px;
+    border: 1px solid #d9d9d9;
+    padding: 13px 9px 13px 17px;
+    &:focus {
+      outline: none;
+      border: 1px solid $primary-font-color;
+    }
+  }
+  .header__search-button {
+    @include flex-center;
+    width: 42px;
+    height: 42px;
+    background-color: #f65858;
+    border-radius: 0 8px 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+}
+.header__input-img {
+  position: absolute;
+  left: 12px;
+}
+.header__auth-lang-container {
+  @include flex-center();
+  gap: 22px;
+  a {
+    display: none;
+  }
+}
+.header__login-container {
+  @include flex-center();
+  gap: 22px;
+}
+.header__lang-change,
+.header__login-button {
+  @include flex-center();
+  gap: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  font-family: "Roboto", sans-serif;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.header__sign-up-button {
+  @include buttons(83px, 36px, $primary-color);
+  @include flex-center;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (max-width: 1196px) {
+  header {
+    padding: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .header__input[type="text"] {
+    display: none;
+  }
+}
+@media (max-width: 772px) {
+  header {
+    flex-direction: column-reverse;
+  }
+  .header__logo-container {
+    padding-top: 15px;
+    width: 100%;
+    a {
+      display: none;
+    }
+  }
+  .header__auth-lang-container {
+    display: flex;
+    justify-content: space-between;
+    a {
+      display: block;
+    }
+  }
+  .header__inputs-form {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  header {
+    padding: 4px 7px;
+  }
+  .header__login-container {
+    gap: 10px;
+    .header__lang-change, .header__login-button, .header__sign-up-button {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.friendship-on-meetup {
+  padding-top: 64px;
+  h2 {
+    @include section-header();
+  }
+}
+.friendship-on-meetup__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $secondary-font-color;
+  padding-top: 16px;
+  padding-right: 320px;
+}
+.friendship-on-meetup__container {
+  padding-top: 28px;
+  display: flex;
+  gap: 32px;
+}
+.friendship-on-meetup__article {
+  flex-basis: 0;
+  flex-grow: 1;
+  img {
+    width: 100%;
+    height: 191px;
+  }
+  h4 {
+    padding-top: 24px;
+    padding-right: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.55;
+    color: $primary-font-color;
+    text-decoration: none;
+  }
+  a {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    &:hover .friendship-on-meetup__read-more {
+      text-decoration: underline;
+      text-decoration-color: $primary-color;
+    }
+  }
+}
+.friendship-on-meetup__article-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 12px;
+  color: $secondary-font-color;
+}
+.friendship-on-meetup__read-more {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 12px;
+  color: $primary-color;
+}
+@media (max-width: 992px) {
+  .friendship-on-meetup__article {
+    img {
+      width: 100%;
+      height: 90%;
+    }
+  }
+}
+.friendship-on-meetup__article-text {
+  font-size: 15px;
+}
+.friendship-on-meetup__text {
+  padding-right: 20px;
+}
+@media (max-width: 768px) {
+  .friendship-on-meetup__text {
+    padding-right: 20px;
+  }
+  .friendship-on-meetup__container {
+    flex-direction: column;
+    img {
+      height: 275px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .friendship-on-meetup {
+    padding-top: 32px;
+  }
+  .friendship-on-meetup__article {
+    h4 {
+      font-size: 16px;
+    }
+    img {
+      height: 80%;
+    }
+  }
+  .friendship-on-meetup__article-text {
+    font-size: 12px;
+    padding-right: 50px;
+  }
+  .friendship-on-meetup__read-more {
+    font-size: 14px;
+  }
+}
