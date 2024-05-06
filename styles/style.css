@@ -1316,8 +1316,8 @@ footer {
 .events__select-arrow {
   position: absolute;
   pointer-events: none;
-  top: 36%;
   right: 16px;
+  top: 35%;
   width: 14px;
   height: 14px;
 }
@@ -1406,14 +1406,16 @@ footer {
   font-weight: 700;
   line-height: 1.4;
 }
-
-.events__map {
-  max-width: 350px;
+.events__map iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 20px;
 }
 
 .events__map-image-container {
   padding-top: 14px;
-  width: clamp(250px, 100%, 350px);
+  width: 350px;
   position: relative;
 }
 
@@ -1458,6 +1460,10 @@ footer {
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+}
+
+.hiden {
+  display: none;
 }
 
 @media (max-width: 992px) {

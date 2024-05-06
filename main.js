@@ -6,6 +6,12 @@ const allEventsDiv = document.querySelector(".events__all-events");
 const eventTypeSelect = document.getElementById("event-type");
 const eventDistanceSelect = document.getElementById("event-distance");
 const eventCategorySelect = document.getElementById("event-category");
+const customSelectDiv = document.querySelectorAll(".events__custom-select");
+const eventMapButton = document.querySelector(".events__map-button");
+const eventMapImage = document.querySelector(".events__map-image");
+const iframe = document.querySelector('iframe');
+const eventMapButtonText = document.querySelector(".events__map-button-text");
+const eventImageContainer = document.querySelector(".events__map-image-container");
 
 function createEvent(arr) {
   arr.forEach((eventElement) => {
@@ -49,20 +55,44 @@ function filterEvents(arr) {
   const selectedType = eventTypeSelect.value === "any" ? undefined : eventTypeSelect.value;
   const selectedDistance = eventDistanceSelect.value === "any" ? undefined : eventDistanceSelect.value;
   const selectedCategory = eventCategorySelect.value === "any" ? undefined : eventCategorySelect.value;
-  let filteredArr = arr;
-  if (selectedType) {
-    filteredArr = filteredArr.filter((element) => element.type === selectedType);
-  }
-  if (selectedDistance) {
-    filteredArr = filteredArr.filter((element) => String(element.distance) === selectedDistance);
-  }
-  if (selectedCategory) {
-    filteredArr = filteredArr.filter((element) => element.category === selectedCategory);
-  }
+  const filteredArr = arr.filter(
+    (element) =>
+      (!selectedType || element.type === selectedType) &&
+      (!selectedDistance || String(element.distance) === selectedDistance) &&
+      (!selectedCategory || element.category === selectedCategory)
+  );
   clearEvents();
   createEvent(filteredArr);
 }
-eventTypeSelect.addEventListener("change", () => {filterEvents(eventsStore)});
-eventDistanceSelect.addEventListener("change", () => {filterEvents(eventsStore)});
-eventCategorySelect.addEventListener("change", () => {filterEvents(eventsStore)});
+function rotateSelectArrow() {
+  customSelectDiv.forEach((el) => {
+    let rotated = false;
+    el.addEventListener("click", () => {
+      rotated = !rotated;
+      el.lastElementChild.style.transform = rotated ? "rotate(180deg)" : "rotate(0deg)";
+    });
+    document.addEventListener("click", (e) => {
+      !el.contains(e.target) && rotated && ((el.lastElementChild.style.transform = "rotate(0deg)"), (rotated = false));
+    });
+  });
+}
+eventTypeSelect.addEventListener("change", () => {
+  filterEvents(eventsStore);
+});
+eventDistanceSelect.addEventListener("change", () => {
+  filterEvents(eventsStore);
+});
+eventCategorySelect.addEventListener("change", () => {
+  filterEvents(eventsStore);
+});
 createEvent(eventsStore);
+rotateSelectArrow();
+
+eventMapButton.addEventListener("click", () => {
+  eventMapImage.classList.toggle("hiden");
+  iframe.classList.toggle("hiden");
+  const isHidden = iframe.classList.contains("hiden");
+  eventMapButton.style.top = isHidden ? "50%" : "90%";
+  eventMapButtonText.textContent = isHidden ? "Browse in map" : "Minimize map";
+  eventImageContainer.style.width = isHidden ? "" : "35vw";
+});
